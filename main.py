@@ -79,6 +79,17 @@ class App:
     def __init__(self, root):
         self.root = root
         self.root.title("Gestione Database")
+        self.sociobutt = ttk.Button(root, text="Aggiungi Socio", command=self.add_socio)
+
+    def soci(self):
+        x = SocioWindow(self.root)
+
+
+
+class SocioWindow:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Gestione Database")
 
         self.db_manager = DatabaseManager("database.db")
 
@@ -143,5 +154,5 @@ class App:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = App(root)
+    app = SocioWindow(root)
     root.mainloop()
